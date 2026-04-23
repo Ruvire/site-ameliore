@@ -1,0 +1,181 @@
+/* ================================================
+   FEUILLE DE STYLE IMPRESSION
+   Site : Élevage de poules pondeuses au Burundi
+   Auteur : Équipe éditoriale burundaise
+   ================================================ */
+
+/* --- Base impression --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 12pt;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/* --- Liens : afficher l'URL après le texte --- */
+a::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #444444;
+}
+
+a[href^="#"]::after,
+a[href^="mailto:"]::after {
+    content: "";
+}
+
+/* ================================================
+   EN-TÊTE
+   ================================================ */
+header {
+    border-bottom: 2pt solid #000000;
+    padding-bottom: 0.5cm;
+    margin-bottom: 0.75cm;
+}
+
+header h1 {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #000000;
+}
+
+header p {
+    font-size: 10pt;
+    color: #333333;
+    font-style: italic;
+}
+
+/* ================================================
+   NAVIGATION — masquée à l'impression
+   ================================================ */
+nav {
+    display: none;
+}
+
+/* ================================================
+   CONTENU PRINCIPAL
+   ================================================ */
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================================
+   ARTICLE ET SECTIONS
+   ================================================ */
+article {
+    margin-bottom: 1cm;
+}
+
+article > h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    border-bottom: 1pt solid #000000;
+    padding-bottom: 0.2cm;
+    margin-bottom: 0.4cm;
+    page-break-after: avoid;
+}
+
+article h2 {
+    font-size: 13pt;
+    font-weight: bold;
+    margin-top: 0.6cm;
+    margin-bottom: 0.25cm;
+    page-break-after: avoid;
+}
+
+article h3 {
+    font-size: 11pt;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 0.4cm;
+    margin-bottom: 0.2cm;
+    page-break-after: avoid;
+}
+
+article p,
+article section p {
+    margin-bottom: 0.35cm;
+    orphans: 3;
+    widows: 3;
+}
+
+article section {
+    margin-top: 0.5cm;
+}
+
+/* Images — adaptées à la largeur de la page */
+article img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5cm 0;
+}
+
+/* Listes */
+article ul {
+    margin: 0.3cm 0 0.3cm 1cm;
+}
+
+article ul li {
+    margin-bottom: 0.15cm;
+}
+
+/* ================================================
+   SECTION CONTACT
+   ================================================ */
+section#contact {
+    border-top: 1pt solid #000000;
+    margin-top: 0.75cm;
+    padding-top: 0.5cm;
+}
+
+section#contact h2 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 0.25cm;
+}
+
+section#contact p {
+    margin-bottom: 0.2cm;
+    font-size: 11pt;
+}
+
+/* ================================================
+   PIED DE PAGE
+   ================================================ */
+footer {
+    border-top: 1pt solid #000000;
+    margin-top: 0.75cm;
+    padding-top: 0.4cm;
+    font-size: 9pt;
+    color: #333333;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0.15cm;
+}
+
+/* ================================================
+   SAUTS DE PAGE
+   ================================================ */
+h1, h2, h3 {
+    page-break-after: avoid;
+}
+
+p, ul, section {
+    page-break-inside: avoid;
+}
